@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-blue">
   <div class="container-fluid">
     <a class="navbar-brand" href="<?= base_url('/clientes')?>">
         <img class="img-fluid w-50" src="<?= base_url('/imagenes/logo.png')?>" alt="">
