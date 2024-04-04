@@ -7,6 +7,8 @@
 <table class="table table-hover table-sm">
 	<thead>
         <th>Fecha ingreso</th>
+        <th>Observaciones</th>
+        <th>Acciones</th>
 	</thead>
 	<tbody>
 		<?php
@@ -15,6 +17,14 @@
 			<tr>
 				<td>
 					<?= $ordenFinalizada['fechaIngreso'] ?>
+				</td>
+				<td>
+					<?= $ordenFinalizada['observaciones'] ?>
+				</td>
+				<td>
+					<a href="<?= site_url('facturas/cobrar/' . $ordenFinalizada['id'])?>" class="btn btn-success">
+						Cobrar
+					</a>
 				</td>
 			</tr>
 		<?php endforeach; ?>

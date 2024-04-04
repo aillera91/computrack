@@ -16,6 +16,15 @@ class OrdenController extends BaseController
         $ordenModel = new OrdenModel();
         $ordenes = $ordenModel->findAll();
 
+        $clienteModel = new ClienteModel();
+
+        foreach($ordenes as &$orden) {
+            $dispositivoId = $orden['dispositivo_id'];
+            $cliente = $clienteModel->join('dispositivos', 'clientes.id = dispositivos.cliente_id')->where('dispositivos.id', $dispositivoId)->first();
+
+            $orden['nombre_cliente'] = $cliente['nombres'] . ' ' . $cliente['apellidos'];
+        }
+
         $data['ordenes'] = $ordenes;
         return view('ordenes/listado', $data);
     }
